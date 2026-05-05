@@ -6,8 +6,9 @@ import { FixedHeightExample } from "./components/FixedHeightExample";
 import { VariableHeightExample } from "./components/VariableHeightExample";
 import { DynamicHeightExample } from "./components/DynamicHeightExample";
 import { GridExample } from "./components/GridExample";
+import { ResponsiveGridExample } from "./components/ResponsiveGridExample";
 
-type TabType = "fixed" | "variable" | "dynamic" | "grid";
+type TabType = "fixed" | "variable" | "dynamic" | "grid" | "responsive-grid";
 
 export default function ListPage() {
   const [activeTab, setActiveTab] = useState<TabType>("fixed");
@@ -32,6 +33,11 @@ export default function ListPage() {
       id: "grid" as TabType,
       label: GridExample.tabLabel,
       component: <GridExample contacts={sampleContacts} />,
+    },
+    {
+      id: "responsive-grid" as TabType,
+      label: ResponsiveGridExample.tabLabel,
+      component: <ResponsiveGridExample contacts={sampleContacts} />,
     },
   ];
 

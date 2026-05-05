@@ -4,7 +4,7 @@ A comprehensive tutorial demonstrating different virtualization techniques using
 
 ## 🚀 Features
 
-This tutorial includes four different virtualization examples:
+This tutorial includes five different virtualization examples:
 
 ### 1. **Fixed Height Lists**
 - Demonstrates basic list virtualization with fixed row heights (25px)
@@ -31,6 +31,13 @@ This tutorial includes four different virtualization examples:
 - Variable column widths optimized for different data types
 - Handles 50 contact records with 10 columns each
 - Efficient for large datasets like data tables or spreadsheets
+
+### 5. **Responsive Grid Virtualization**
+- Combines list virtualization with a responsive CSS grid layout
+- Each virtualized row renders a grid of contact cards using Tailwind breakpoints
+- Column count adapts automatically to window width: 1 → 2 → 3 → 4 columns
+- Row heights are measured dynamically with `useDynamicRowHeight`, resetting when the column count changes
+- Demonstrates how to combine `react-window` with Tailwind's responsive design system
 
 ## 🛠 Tech Stack
 
@@ -65,7 +72,8 @@ app/
 │   ├── VariableHeightExample.tsx   # Variable height list demo
 │   ├── DynamicHeightExample.tsx    # Dynamic height list demo
 │   ├── DynamicRowComponent.tsx     # Collapsible row component
-│   └── GridExample.tsx             # Grid virtualization demo
+│   ├── GridExample.tsx             # Grid virtualization demo
+│   └── ResponsiveGridExample.tsx   # Responsive grid virtualization demo
 ├── hooks/
 │   └── useListState.ts             # State management for dynamic lists
 ├── layout.tsx                      # App layout
@@ -84,7 +92,8 @@ After exploring this tutorial, you'll understand:
 2. **Fixed vs Variable Heights** - Different approaches for different use cases
 3. **Dynamic Height Measurement** - Handling content that changes size
 4. **Grid Virtualization** - 2D virtualization for tabular data
-5. **Performance Optimization** - Best practices for large list rendering
+5. **Responsive Grid** - Combining virtualization with responsive CSS grid layouts
+6. **Performance Optimization** - Best practices for large list rendering
 
 ## 🔧 Key Concepts Demonstrated
 
@@ -103,6 +112,12 @@ After exploring this tutorial, you'll understand:
 - Optimizes rendering for large tabular data
 - Supports variable column widths
 
+### Responsive Grid Virtualization
+- Uses `List` to virtualize rows, with each row containing a CSS grid of cards
+- Tailwind responsive classes (`grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4`) control column count
+- `useDynamicRowHeight` with a `key` tied to the column count re-measures row heights on layout changes
+- Demonstrates how to pair virtualization with responsive design without JavaScript-driven layout logic
+
 ## 📊 Performance Benefits
 
 Virtualization provides significant performance improvements:
@@ -117,7 +132,7 @@ Virtualization provides significant performance improvements:
 - **Tab Navigation**: Switch between different examples
 - **Scroll to Row**: Jump to specific items in fixed height lists
 - **Expand/Collapse**: Toggle content in dynamic height lists
-- **Responsive Design**: Works on different screen sizes
+- **Responsive Grid**: Automatically adjusts columns (1–4) based on window width
 
 ## 🚦 Getting Started
 
@@ -125,3 +140,4 @@ Virtualization provides significant performance improvements:
 2. Explore **Variable Height** to see how different item sizes work
 3. Try **Dynamic Height** for advanced use cases with changing content
 4. Check out **Grid** example for tabular data virtualization
+5. Explore **Responsive Grid** to see how virtualization pairs with Tailwind's responsive design
